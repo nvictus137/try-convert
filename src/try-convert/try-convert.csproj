@@ -1,16 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ServerGarbageCollection>true</ServerGarbageCollection>
     <AutoGenerateAssemblyVersion>true</AutoGenerateAssemblyVersion>
-
     <Description>Command line tool for converting a project to run under .NET Core.</Description>
-
     <IsPackable>true</IsPackable>
     <PackAsTool>true</PackAsTool>
-
     <!--
       These identifiers are for generating the shim'd core executables for signing. Not all options
       from $(RoslynPortableRuntimeIdentifiers) work or make sense in this context.
@@ -18,18 +14,13 @@
     <PackAsToolShimRuntimeIdentifiers>win-x64;win-x86</PackAsToolShimRuntimeIdentifiers>
     <RootNamespace>MSBuild.Conversion</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="System.CommandLine" />
     <PackageReference Include="Microsoft.Build.Locator" />
-    <PackageReference Include="Microsoft.Win32.Registry" />
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="System.Configuration.ConfigurationManager" />
-    <PackageReference Include="System.Security.Principal.Windows" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\MSBuild.Conversion.Project\MSBuild.Conversion.Project.csproj" />
   </ItemGroup>
-
 </Project>
